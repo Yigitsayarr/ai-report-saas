@@ -60,10 +60,9 @@ kurumsal teklif hazırla.
 FORMAT KURALLARI
 Sadece düz metin kullan
 Markdown, yıldız, tire, numara, emoji kullanma
-Başlıklar BÜYÜK HARF
 Kurumsal ve resmi dil kullan
 
-En üstte başlık olmasın direk Sayın, ile başlasın.
+Başlık kullanma.
 
 FİRMA BİLGİLERİ
 Firma Adı: {company_name}
