@@ -1,0 +1,129 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Inter, Arial, sans-serif;
+    background: linear-gradient(180deg, #f3f4f6, #e5e7eb);
+    color: #111827;
+}
+
+.container {
+    max-width: 680px;
+    margin: 60px auto;
+    background: #ffffff;
+    padding: 36px 40px;
+    border-radius: 14px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+h1 {
+    margin-top: 0;
+    font-size: 28px;
+    text-align: center;
+    letter-spacing: -0.4px;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 34px;
+}
+
+h2 {
+    font-size: 15px;
+    margin: 34px 0 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #e5e7eb;
+    color: #111827;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 11px 14px;
+    margin-bottom: 14px;
+    font-size: 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background: #ffffff;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.row {
+    display: flex;
+    gap: 12px;
+}
+
+.row input {
+    flex: 1;
+}
+
+/* ======================
+   BUTONLAR
+====================== */
+.button-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+button {
+    flex: 1;
+    padding: 14px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+/* PDF */
+button {
+    background: #111827;
+    color: #ffffff;
+}
+
+button:hover {
+    background: #1f2937;
+    transform: translateY(-1px);
+}
+
+/* WORD */
+button.secondary {
+    background: #ffffff;
+    color: #111827;
+    border: 1px solid #d1d5db;
+}
+
+button.secondary:hover {
+    background: #f9fafb;
+    border-color: #9ca3af;
+    transform: translateY(-1px);
+}
+
+/* Mobil */
+@media (max-width: 600px) {
+    .container {
+        padding: 28px 22px;
+    }
+
+    .button-row {
+        flex-direction: column;
+    }
+}

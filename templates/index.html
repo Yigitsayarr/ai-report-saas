@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Rapor & Teklif Oluşturucu</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>AI Rapor & Teklif Oluşturucu</h1>
+    <p class="subtitle">
+        Kurumsal analiz raporu ve teklifinizi saniyeler içinde oluşturun
+    </p>
+
+    <!-- FORM -->
+    <form id="reportForm" method="post">
+
+        <h2>Rapor Bilgileri</h2>
+
+        <input name="report_title" placeholder="Rapor Başlığı" required>
+        <input name="company_name" placeholder="Kurum / Şirket Adı" required>
+        <input name="prepared_by" placeholder="Hazırlayan Kişi / Firma" required>
+        <input name="target_unit" placeholder="Hitap Edilen Birim / Kişi" required>
+
+        <div class="row">
+            <input name="report_date" type="date" required>
+            <input name="report_version" placeholder="Rapor No / Versiyon" required>
+        </div>
+
+        <h2>Analiz Bilgileri</h2>
+
+        <input name="sector" placeholder="Sektör" required>
+        <textarea name="problem" placeholder="Mevcut Problem Tanımı" required></textarea>
+        <textarea name="requested_service" placeholder="Talep Edilen Hizmet" required></textarea>
+
+        <!-- BUTONLAR -->
+        <div class="button-row">
+            <button type="button" onclick="submitForm('pdf')">
+                PDF OLUŞTUR
+            </button>
+
+            <button type="button" class="secondary" onclick="submitForm('docx')">
+                WORD (DOCX) OLUŞTUR
+            </button>
+        </div>
+
+    </form>
+</div>
+
+<script>
+function submitForm(type) {
+    const form = document.getElementById("reportForm");
+
+    if (type === "pdf") {
+        form.action = "/generate-pdf";
+    } else {
+        form.action = "/generate-docx";
+    }
+
+    form.submit();
+}
+</script>
+
+</body>
+</html>
