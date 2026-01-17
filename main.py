@@ -64,7 +64,7 @@ Başlıklar BÜYÜK HARF
 Kurumsal ve resmi dil kullan
 
 RAPOR BÖLÜMLERİ
-YÖNETİCİ ÖZETİ
+YÖNETİCİ ÖZETİ bölümü olsun ama başlıkta yönetici özeti yazmasın daha profesyonel bir başlık yazsın.
 GİRİŞ
 PROBLEM TANIMI VE AMAÇ
 METODOLOJİ
