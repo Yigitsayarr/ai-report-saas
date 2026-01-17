@@ -63,7 +63,7 @@ Markdown, yıldız, tire, numara, emoji kullanma
 Başlıklar BÜYÜK HARF
 Kurumsal ve resmi dil kullan
 
-Başlık olarak teklif metni yazmasın daha profesyonel bir başlık olsun.
+En üstte başlık olmasın direk Sayın, ile başlasın.
 
 FİRMA BİLGİLERİ
 Firma Adı: {company_name}
