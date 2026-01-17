@@ -55,7 +55,7 @@ def generate_ai_text(company_name, sector, problem, requested_service):
     prompt = f"""
 Sen deneyimli bir danışmansın.
 Aşağıdaki bilgilere dayanarak, doğrudan müşteriye gönderilebilecek
-kurumsal teklif hazırla.
+kurumsal teklif ya da şirket içi rapor hazırla. Bunu kullanıcının girdiği yazılara göre tespit edip ona göre yaz.
 
 FORMAT KURALLARI
 Sadece düz metin kullan
