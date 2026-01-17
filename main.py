@@ -53,9 +53,9 @@ def root():
 # =========================
 def generate_ai_text(company_name, sector, problem, requested_service):
     prompt = f"""
-Sen deneyimli bir B2B danışmanlık firmasının kıdemli danışmanısın.
+Sen deneyimli bir danışmansın.
 Aşağıdaki bilgilere dayanarak, doğrudan müşteriye gönderilebilecek
-kurumsal bir analiz raporu ve hizmet teklifi hazırla.
+kurumsal teklif hazırla.
 
 FORMAT KURALLARI
 Sadece düz metin kullan
@@ -63,16 +63,7 @@ Markdown, yıldız, tire, numara, emoji kullanma
 Başlıklar BÜYÜK HARF
 Kurumsal ve resmi dil kullan
 
-RAPOR BÖLÜMLERİ
-YÖNETİCİ ÖZETİ bölümü olsun ama başlıkta yönetici özeti yazmasın daha profesyonel bir başlık yazsın.
-GİRİŞ
-PROBLEM TANIMI VE AMAÇ
-METODOLOJİ
-DEĞERLENDİRME
-SONUÇ
-ÖNERİLER VE AKSİYON PLANI
-RİSKLER VE KISITLAR
-KAYNAKÇA
+
 
 FİRMA BİLGİLERİ
 Firma Adı: {company_name}
