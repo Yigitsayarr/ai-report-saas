@@ -42,7 +42,7 @@ def ui(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
 
 # =========================
-# Sağlık Kontrolü
+# Sağlık
 # =========================
 @app.get("/")
 def root():
@@ -64,7 +64,6 @@ Başlıklar BÜYÜK HARF
 Kurumsal ve resmi dil kullan
 
 RAPOR BÖLÜMLERİ
-
 YÖNETİCİ ÖZETİ
 GİRİŞ
 PROBLEM TANIMI VE AMAÇ
@@ -89,7 +88,7 @@ Talep Edilen Hizmet: {requested_service}
     return response.choices[0].message.content
 
 # =========================
-# PDF ÜRET
+# PDF ÜRET & İNDİR
 # =========================
 @app.post("/generate-pdf")
 def generate_pdf(
@@ -156,10 +155,14 @@ def generate_pdf(
 
     doc.build(elements)
 
-    return {"file": file_name}
+    return FileResponse(
+        path=file_path,
+        media_type="application/pdf",
+        filename=file_name
+    )
 
 # =========================
-# DOCX ÜRET (DÜZELTİLDİ)
+# DOCX ÜRET & İNDİR
 # =========================
 @app.post("/generate-docx")
 def generate_docx(
@@ -181,11 +184,9 @@ def generate_docx(
 
     doc = Document()
 
-    # BAŞLIK
     title = doc.add_heading(report_title, level=1)
     title.runs[0].font.size = Pt(16)
 
-    # META
     meta_fields = [
         f"Kurum / Şirket: {company_name}",
         f"Hazırlayan: {prepared_by}",
@@ -201,7 +202,6 @@ def generate_docx(
 
     doc.add_paragraph("")
 
-    # İÇERİK (GÜVENLİ)
     for line in ai_text.split("\n"):
         p = doc.add_paragraph()
         run = p.add_run(line)
@@ -209,15 +209,8 @@ def generate_docx(
 
     doc.save(file_path)
 
-    return {"file": file_name}
-
-# =========================
-# DOSYA İNDİR
-# =========================
-@app.get("/{file_name}")
-def download_file(file_name: str):
     return FileResponse(
-        path=file_name,
-        media_type="application/octet-stream",
+        path=file_path,
+        media_type="application/vnd.openxmlformats-officedocument.wordprocessingml.document",
         filename=file_name
     )
